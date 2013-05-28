@@ -1,9 +1,11 @@
 package org.mustofa.assignment.marsrover.core;
 
+import org.mustofa.assignment.marsrover.Operate;
+
 /*A robotic rovers
  * 
  */
-public class Rover {
+public class Rover implements Operate {
 	private int x;
 	private int y;
 	private char direction;
@@ -42,7 +44,7 @@ public class Rover {
 	}
 
 	private void moveForward() {
-		
+
 		switch (getDirection()) {
 		case 'N':
 			setY(getY() + 1);
@@ -96,7 +98,6 @@ public class Rover {
 		}
 	}
 
-	
 	/**
 	 * @return the x
 	 */
@@ -121,7 +122,7 @@ public class Rover {
 
 	/**
 	 * @param y
-	 * the y to set
+	 *            the y to set
 	 */
 	public void setY(int y) {
 		this.y = y;
@@ -155,14 +156,14 @@ public class Rover {
 	@Override
 	public boolean equals(Object obj) {
 		Rover other = (Rover) obj;
-		
+
 		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
 		if (!(obj instanceof Rover))
 			return false;
-		
+
 		if (direction != other.direction)
 			return false;
 		if (x != other.x)
